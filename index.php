@@ -10,6 +10,9 @@
     <title>MemeDream</title>
   </head>
   <body>
+    <header class="navbar">
+    </header>
+
     <h1>Hello, world!</h1>
 
     <!-- Optional JavaScript -->
