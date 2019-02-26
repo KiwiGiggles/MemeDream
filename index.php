@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/simple-sidebar.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="pictures/logo.png"/>
 
     <title>Home - MemeDream</title>
   </head>
@@ -27,8 +29,8 @@
       <!-- Page Content -->
       <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="btn btn-primary" style="margin-right: 10px;" id="menu-toggle">Toggle Menu</button>
+      <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+        <button class="btn btn-primary" style="margin-right: 10px;" id="menu-toggle">Toggle Menu</button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,13 +38,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="navbar-brand" href="#">MemeDream</a>
+                <a class="navbar-brand" href="index.php">MemeDream</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">Popular <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Hot</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">New</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -61,7 +66,28 @@
       </nav>
 
         <div class="container-fluid">
-          <h1 class="mt-4">Hello MemeDream!</h1>
+          <h2 class="mt-4 mb-4">Popular posts today</h2>
+
+          <div class="post">
+            <div class="op">
+              <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
+              <p class="op-desc">Posted by <a class="op-name" href="#">Osman</a> 5 minutes ago.</p>
+            </div>
+            <h2 class="post-title">Knugen! King of Sweden!</h2>
+            <div class="post-img-container">
+              <img class="post-img" src="pictures/knugen6.png">
+              <div class="btn-group post-footer">
+                <button type="button" class="btn btn-secondary post-footer-btn">Comments <span class="fas fa-comment-alt"></span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn">Share <span class="fas fa-share"></span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn">Save <span class="far fa-bookmark" style="color: #495057;"></span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn">Report <span class="fas fa-flag"></span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn"><span class="fas fa-arrow-up" data-fa-transform="grow-6"></span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn">9999</span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn"><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       <!-- /#page-content-wrapper -->
