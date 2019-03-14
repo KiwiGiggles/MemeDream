@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/simple-sidebar.css" type="text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="shortcut icon" href="pictures/logo.png"/>
 
     <title>Popular - MemeDream</title>
@@ -41,8 +40,9 @@
       <!-- Page Content -->
       <div id="page-content-wrapper">
 
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-        <button class="btn btn-primary" style="margin-right: 10px;" id="menu-toggle">Toggle Menu</button>
+        <button class="btn btn-primary" style="margin-right: 10px;" id="menu-toggle"><i class="fas fa-caret-left" data-fa-transform="grow-12"></i></span></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -79,7 +79,8 @@
 
         <div class="container-fluid">
           <h2 class="mt-4 mb-4">Popular posts today</h2>
-
+          
+          <!-- Posts -->
           <div class="post">
             <div class="op">
               <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
@@ -91,7 +92,7 @@
               <div class="btn-group post-footer">
                 <button type="button" class="btn btn-secondary post-footer-btn">Comments <span class="fas fa-comment-alt"></span></button>
                 <button type="button" class="btn btn-secondary post-footer-btn">Share <span class="fas fa-share"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn">Save <span class="far fa-bookmark" style="color: #495057;"></span></button>
+                <button type="button" class="btn btn-secondary post-footer-btn">Save <span class="far fa-bookmark"></span></button>
                 <button type="button" class="btn btn-secondary post-footer-btn">Report <span class="fas fa-flag"></span></button>
                 <button type="button" class="btn btn-secondary post-footer-btn"><span class="fas fa-arrow-up" data-fa-transform="grow-6"></span></button>
                 <button type="button" class="btn btn-secondary post-footer-btn">9999</span></button>
@@ -120,7 +121,7 @@
     </script>
 
  
-    
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
