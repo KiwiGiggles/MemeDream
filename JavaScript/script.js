@@ -8,3 +8,8 @@
 //});
 
 // $('#menu-toggle')
+
+$('#CreateBtn').click(function() {
+    console.log('fis');
+    window.location.href = "http://tor.skelamp.se/aleohm-7/w/MemeDream/create.php";
+});

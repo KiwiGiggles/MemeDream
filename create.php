@@ -71,15 +71,16 @@
 
           <!-- Post creator -->
           <div class="post">
-            <div class="op">
-              <img class="oc-prof-pic" src="pictures/1200px-765Oranguru.png">
-              <p class="op-desc">This post was made by <a class="op-name" href="#">Osman</a> 5 minutes ago.</p>
+          <div class="input-group" id="TitleInput">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3">Title: </span>
             </div>
-            <h2 class="post-title">Knugen! King of Sweden!</h2>
-            <br>
-            <input>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
             <div class="post-img-container">
-              <img class="post-img" src="pictures/knugen6.png">
+              <div id="ImgArea">
+                <button class="btn btn-primary">Browse images</button>
+              </div>
               <div class="btn-group post-footer">
                 <button type="button" class="btn btn-secondary post-footer-btn" disabled>Comments <span class="fas fa-comment-alt"></span></button>
                 <button type="button" class="btn btn-secondary post-footer-btn" disabled>Share <span class="fas fa-share"></span></button>
