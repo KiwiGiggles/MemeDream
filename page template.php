@@ -1,15 +1,3 @@
-<?php
-
-  session_start();
-  
-  
-
-  if(isset($_SESSION)){
-
-  }
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -79,29 +67,8 @@
       </nav>
 
         <div class="container-fluid">
-          <h2 class="mt-4 mb-4">Popular posts today</h2>
           
-          <!-- Posts -->
-          <div class="post">
-            <div class="op">
-              <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
-              <p class="op-desc">This post was made by <a class="op-name" href="#">Osman</a> 5 minutes ago.</p>
-            </div>
-            <h2 class="post-title">Knugen! King of Sweden!</h2>
-            <div class="post-img-container">
-              <img class="post-img" src="pictures/knugen6.png">
-              <div class="btn-group post-footer">
-                <button type="button" class="btn btn-secondary post-footer-btn">Comments <span class="fas fa-comment-alt"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn">Share <span class="fas fa-share"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn">Save <span class="far fa-bookmark"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn">Report <span class="fas fa-flag"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn"><span class="fas fa-arrow-up" data-fa-transform="grow-6"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn">0</span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn"><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
-              </div>
-            </div>
-          </div>
-
+          
         </div>
       </div>
       <!-- /#page-content-wrapper -->

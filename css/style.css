@@ -1,6 +1,9 @@
 body{
     background-color: #d8d8d8;
 }
+.create-btn{
+    margin-left: 10px;
+}
 .post{
     border: 1px solid black;
     border-radius: 5px;
@@ -52,7 +55,7 @@ body{
     display: inline;
     font-weight: 450;
 }
-.op-prof-pic{
+.op-prof-pic, .oc-prof-pic{
     border-radius: 50%;
     width: 30px;
     border: 1px solid black;
