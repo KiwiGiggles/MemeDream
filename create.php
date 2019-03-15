@@ -79,7 +79,7 @@
           </div>
             <div class="post-img-container">
               <div id="ImgArea">
-                <button class="btn btn-primary">Browse images</button>
+                <button class="btn btn-secondary">Browse images</button>
               </div>
               <div class="btn-group post-footer">
                 <button type="button" class="btn btn-secondary post-footer-btn" disabled>Comments <span class="fas fa-comment-alt"></span></button>
@@ -91,6 +91,7 @@
                 <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
               </div>
             </div>
+            <button style="width: 100%;" class="btn btn-primary">Post</button>
           </div>
 
         </div>
