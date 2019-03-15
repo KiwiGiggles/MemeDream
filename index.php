@@ -31,8 +31,8 @@
       <div class="bg-dark border-right" style="border-right: 1px solid rgba(0,0,0,.125)!important;" id="sidebar-wrapper">
         <div class="sidebar-heading" style="color: white;">Followed users</div>
         <div class="list-group list-group-flush">
-          <p style="color: white;">You need to <a href="#">login</a> to see followed users</p>
-          <p style="color: white;">Don't have an account? <a href="#">Sign up</a>!</p>
+          <p style="color: white; margin: 5px;">You need to <a href="#">login</a> to see followed users</p>
+          <p style="color: white; margin: 5px;">Don't have an account? <a href="#">Sign up</a>!</p>
         </div>
       </div>
       <!-- /#sidebar-wrapper -->
@@ -84,7 +84,7 @@
           <div class="post">
             <div class="op">
               <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
-              <p class="op-desc">Posted by <a class="op-name" href="#">Osman</a> 5 minutes ago.</p>
+              <p class="op-desc">This post was made by <a class="op-name" href="#">Osman</a> 5 minutes ago.</p>
             </div>
             <h2 class="post-title">Knugen! King of Sweden!</h2>
             <div class="post-img-container">
