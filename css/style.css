@@ -79,3 +79,6 @@ body{
     align-items: center;
     justify-content: center;
 }
+.login-input{
+    max-width: 500px;
+}
