@@ -78,7 +78,11 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control login-input" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div style="display: inline-block; width: 500px;">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.php">Don't have an account?</a></p>
+                  <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/forgot password.php">Forgot password?</a></p>
+                </div>
             </form>
         </div>
       </div>
