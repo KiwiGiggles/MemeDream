@@ -70,29 +70,37 @@
             <h2 class="mt-4 mb-4">Create your post!</h2>  
 
           <!-- Post creator -->
-          <div class="post">
-          <div class="input-group" id="TitleInput">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon3">Title: </span>
-            </div>
-            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-          </div>
-            <div class="post-img-container">
-              <div id="ImgArea">
-                <button class="btn btn-secondary">Browse images</button>
+          <form enctype="multipart/form-data" method="post">
+            <div class="post">
+            <div class="input-group" id="TitleInput">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Title: </span>
               </div>
-              <div class="btn-group post-footer">
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled>Comments <span class="fas fa-comment-alt"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled>Share <span class="fas fa-share"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled>Save <span class="far fa-bookmark"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled>Report <span class="fas fa-flag"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-up" data-fa-transform="grow-6"></span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled>0</span></button>
-                <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
-              </div>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
             </div>
-            <button style="width: 100%;" class="btn btn-primary">Post</button>
-          </div>
+              <div class="post-img-container">
+                <div id="ImgArea">
+                  <form method="post" action="#">
+                      <div class="form-group files">
+                        <label>Upload your image</label>
+                        <input type="file" class="form-control" multiple=""  id="FileForm">
+                      </div>
+                  </form>
+                </div>
+                <div class="btn-group post-footer">
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled>Comments <span class="fas fa-comment-alt"></span></button>
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled>Share <span class="fas fa-share"></span></button>
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled>Save <span class="far fa-bookmark"></span></button>
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled>Report <span class="fas fa-flag"></span></button>
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-up" data-fa-transform="grow-6"></span></button>
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled>0</span></button>
+                  <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
+                </div>
+              </div>
+              <button style="width: 100%;" class="btn btn-primary">Post</button>
+            </div>
+          </form>
+          
 
         </div>
       </div>
@@ -120,5 +128,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="JavaScript/script.js"></script>
+    <script src="JavaScript/input file.js"></script>
   </body>
 </html>
