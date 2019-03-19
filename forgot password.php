@@ -69,10 +69,22 @@
         <div class="container-fluid">
             <h2 class="mt-4 mb-4">Forgot password</h2>  
           
-            <form>
+            <?php
+                function sendMail() {
+                    $useremail = $_POST['userEmail'];
+                    $msg = "Big Xd";
+
+                    mail($useremail, "funkar?", $msg);
+                  }
+                
+                  if (isset($_GET['setmail'])) {
+                    sendMail();
+                  }
+            ?>
+            <form name="form" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control login-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control login-input" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <p>This will send a recovery password to your email adress.</p>
                 <button type="submit" class="btn btn-primary">Send email</button>
