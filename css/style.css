@@ -99,7 +99,7 @@ body{
 .files{ position:relative}
 .files:after {  pointer-events: none;
     position: absolute;
-    top: 60px;
+    top: 160px;
     left: 0;
     width: 50px;
     right: 0;
@@ -128,5 +128,14 @@ body{
     text-align: center;
 }
 #FileForm{
-    height: 300px;
+    height: 400px;
+    width: 500px!important;
+    padding-top: 230px;
+}
+#fileUploadDiv{
+    margin: 0;
+}
+#postLabel{
+    position: absolute;
+    margin: 30px 0 0 30px;
 }

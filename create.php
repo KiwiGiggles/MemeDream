@@ -81,8 +81,8 @@
               <div class="post-img-container">
                 <div id="ImgArea">
                   <form method="post" action="#">
-                      <div class="form-group files">
-                        <label>Upload your image</label>
+                      <div class="form-group files" id="fileUploadDiv">
+                        <label id="postLabel">Upload your image</label>
                         <input type="file" class="form-control" multiple=""  id="FileForm">
                       </div>
                   </form>
