@@ -1,3 +1,65 @@
+<?php 
+
+include('database_connection.php');
+
+session_start();
+
+$message = '';
+
+if(isset($_SESSION['user_id'])){
+  header('location:index.php');
+}
+
+if(isset($_POST['signup'])){
+  $username = trim($_POST["username"]);
+  $password = trim($_POST["password"]);
+  $check_query = " SELECT * FROM tbl_twitter_user
+  WHERE username = :username
+  ";
+  $statement = $connect->prepare($check_query);
+  $check_data = array(
+    ':username'   => $username
+  );
+  if($statement->execute($check_data)){
+    if($statement->rowCount() > 0)
+    {
+      $message .= '<p><label>Username already taken</label></p>';
+    }
+    else{
+      if(empty($username)){
+        $message .= '<p><label>Username is required</label></p>';
+      }
+      if(empty($password)){
+        $message .= '<p><label>Password is required</label></p>';
+      }
+      else{
+        if($password != $_POST["confirm_password"]){
+          $message .= '<p><label>Password does not match</label></p>';
+        }
+      }
+      if($message == ''){
+        $data = array(
+          ':username'   => $username,
+          ':password'   => password_hash($password, PASSWORD_DEFAULT)
+        );
+
+        $query = " INSERT INFO tbl_twitter_user
+        (username, password)
+        VALUES (:username, :password)
+        ";
+
+        $statement = $connect->prepare($query);
+
+        if($statement->execute($data)){
+          $message = '<label>Sign up completed</label>';
+        }
+      }
+    }
+  }
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,10 +131,11 @@
         <div class="container-fluid">
             <h2 class="mt-4 mb-4">Sign up</h2>  
             
-            <form>
+            <form method="post">
+             <span class="text-danger"><?php echo $message; ?></span>
                 <div class="form-group">
                     <label for="InputEmail1">Username</label>
-                    <input type="email" class="form-control login-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+                    <input type="text" name="username" class="form-control login-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
                 </div>
                 <div class="form-group">
                     <label for="InputEmail1">Email address</label>
@@ -80,13 +143,15 @@
                 </div>
                 <div class="form-group">
                     <label for="InputPassword1">Password</label>
-                    <input type="password" class="form-control login-input" id="InputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control login-input" id="InputPassword1" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword2">Confirm Password</label>
-                    <input type="password" class="form-control login-input" id="InputPassword2" placeholder="Password">
+                    <input type="password" name="confirm_password" class="form-control login-input" id="InputPassword2" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                <input type="submit" name="signup" class="btn btn-primary" value="submit" />
+                </div>
             </form>
         </div>
       </div>
