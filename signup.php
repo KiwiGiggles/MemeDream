@@ -13,6 +13,7 @@ if(isset($_SESSION['user_id'])){
 if(isset($_POST['signup'])){
   $username = trim($_POST["username"]);
   $password = trim($_POST["password"]);
+  $email = trim($_POST["email"]);
   $check_query = " SELECT * FROM tbl_twitter_user
   WHERE username = :username
   ";
@@ -28,6 +29,9 @@ if(isset($_POST['signup'])){
     else{
       if(empty($username)){
         $message .= '<p><label>Username is required</label></p>';
+      }
+      if(empty($email)){
+        $message .= '<p><label>email is required</label></p>';
       }
       if(empty($password)){
         $message .= '<p><label>Password is required</label></p>';
@@ -139,7 +143,7 @@ if(isset($_POST['signup'])){
                 </div>
                 <div class="form-group">
                     <label for="InputEmail1">Email address</label>
-                    <input type="email" class="form-control login-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" name="email" class="form-control login-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword1">Password</label>
@@ -150,7 +154,7 @@ if(isset($_POST['signup'])){
                     <input type="password" name="confirm_password" class="form-control login-input" id="InputPassword2" placeholder="Password">
                 </div>
                 <div class="form-group">
-                <input type="submit" name="signup" class="btn btn-primary" value="submit" />
+                <button type="submit" name="signup" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
