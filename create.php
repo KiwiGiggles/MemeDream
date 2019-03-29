@@ -97,7 +97,7 @@
                   <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
                 </div>
               </div>
-              <button style="width: 100%;" class="btn btn-primary">Post</button>
+              <button style="width: 100%; border-top-left-radius: 0; border-top-right-radius: 0;" class="btn btn-primary">Post</button>
             </div>
           </form>
           
