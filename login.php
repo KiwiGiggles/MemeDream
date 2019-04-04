@@ -1,3 +1,28 @@
+<?php
+  session_start();
+  include "config.php";
+
+  if (isset($_POST['login'])) {
+    $un = htmlspecialchars($_POST['username']);
+    $un = htmlspecialchars($_POST['email']);
+    $pw = htmlspecialchars($_POST['password']);
+    $sql = "SELECT * FROM user
+    WHERE username='$un' AND password='$pw'";
+    $ps = $db->prepare($sql);
+    $ps->execute();
+
+    if ($ps->fetch()) {
+    $_SESSION['username'] = $un;
+    header('Location: index.php');
+    exit;
+    }
+    else {
+        echo "Fel användarnamn, lösenord eller kombination";
+    }
+
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -71,15 +96,19 @@
           
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control login-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="loginUsername">Username</label>
+                    <input type="username" class="form-control login-input" name="username" id="loginUsername" placeholder="Username">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control login-input" id="exampleInputPassword1" placeholder="Password">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control login-input" name="email" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control login-input" name="password" id="loginPassword" placeholder="Password">
                 </div>
                 <div style="display: inline-block; width: 500px;">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary" name="login">Submit</button>
                   <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.php">Don't have an account?</a></p>
                   <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/forgot password.php">Forgot password?</a></p>
                 </div>

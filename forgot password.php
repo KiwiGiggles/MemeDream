@@ -79,7 +79,7 @@
                 
                   if (isset($_GET['setmail'])) {
                     sendMail();
-                  }
+                }
             ?>
             <form name="form" method="post">
                 <div class="form-group">
