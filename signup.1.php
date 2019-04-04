@@ -2,25 +2,22 @@
   session_start();
   include "config.php";
 
-  if (isset($_POST['login'])) {
+  $db = new PDO("mysql:host=localhost;dbname={$dbprefix}user;charset=utf8", $username, $password);
+
+  if (isset($_POST['signup'])) {
     $un = htmlspecialchars($_POST['username']);
     $pw = htmlspecialchars($_POST['password']);
-    $sql = "SELECT * FROM user
-    WHERE username='$un' AND password='$pw'";
+    $email = htmlspecialchars($_POST['email']);
+    $sql = "INSERT INTO user (Username, Password, Email) VALUES ('$un', '$pw', '$email');";
+
     $ps = $db->prepare($sql);
     $ps->execute();
 
-    if ($ps->fetch()) {
-    $_SESSION['username'] = $un;
-    header('Location: login.php');
+    header('Location: signup.1.php');
     exit;
-    }
-    else {
-        echo "Wrong username of password";
-    }
-
-}
+  }
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -84,28 +81,34 @@
                 <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/login.php">Login <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.1.php">Sign up <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.php">Sign up <span class="sr-only">(current)</span></a>
               </li>
             </ul>
           </div>
       </nav>
 
         <div class="container-fluid">
-            <h2 class="mt-4 mb-4">Login</h2>  
-          
-            <form>
+            <h2 class="mt-4 mb-4">Sign up</h2>  
+            
+            <form method="post">
                 <div class="form-group">
-                    <label for="loginUsername">Username</label>
-                    <input type="username" class="form-control login-input" name="username" id="loginUsername" placeholder="Username">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" class="form-control login-input" name="username" id="signupUsername" aria-describedby="emailHelp" placeholder="Enter username">
                 </div>
                 <div class="form-group">
-                    <label for="loginPassword">Password</label>
-                    <input type="password" class="form-control login-input" name="password" id="loginPassword" placeholder="Password">
+                    <label for="signupEmail">Email address</label>
+                    <input type="email" class="form-control login-input" name="email" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
-                <div style="display: inline-block; width: 500px;">
-                  <button type="submit" class="btn btn-primary" name="login">Submit</button>
-                  <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.1.php">Don't have an account?</a></p>
-                  <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/forgot password.php">Forgot password?</a></p>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" class="form-control login-input" name="password" id="signupPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control login-input" name="confirm_password" id="signupConfirmPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                <input type="submit" class="btn btn-primary" name="signup" value="submit" />
                 </div>
             </form>
         </div>
@@ -113,7 +116,7 @@
       <!-- /#page-content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /#wrapper  -->
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
