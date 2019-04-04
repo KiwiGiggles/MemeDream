@@ -4,7 +4,6 @@
 
   if (isset($_POST['login'])) {
     $un = htmlspecialchars($_POST['username']);
-    $un = htmlspecialchars($_POST['email']);
     $pw = htmlspecialchars($_POST['password']);
     $sql = "SELECT * FROM user
     WHERE username='$un' AND password='$pw'";
@@ -13,11 +12,11 @@
 
     if ($ps->fetch()) {
     $_SESSION['username'] = $un;
-    header('Location: index.php');
+    header('Location: login.php');
     exit;
     }
     else {
-        echo "Fel användarnamn, lösenord eller kombination";
+        echo "Wrong username of password";
     }
 
 }
@@ -98,10 +97,6 @@
                 <div class="form-group">
                     <label for="loginUsername">Username</label>
                     <input type="username" class="form-control login-input" name="username" id="loginUsername" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <label for="loginEmail">Email address</label>
-                    <input type="email" class="form-control login-input" name="email" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="loginPassword">Password</label>
