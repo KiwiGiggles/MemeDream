@@ -42,7 +42,7 @@
 
       <!-- Navbar -->
       <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-        <button class="btn btn-primary" style="margin-right: 10px;" id="menu-toggle"><i class="fas fa-caret-left" data-fa-transform="grow-12"></i></span></button>
+        <button class="btn btn-primary" style="margin-right: 10px;" id="menu-toggle"><i class="fas fa-caret-left" data-fa-transform="grow-12"></i></button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +50,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="navbar-brand" href="index.php">MemeDream</a>
+                <a class="navbar-brand" href="#">
+                  <img src="pictures/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                  MemeDream
+                </a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="index.php">Popular <span class="sr-only">(current)</span></a>

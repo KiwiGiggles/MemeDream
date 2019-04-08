@@ -81,8 +81,8 @@
               <div class="post-img-container">
                 <div id="ImgArea">
                   <form method="post" action="#">
-                      <div class="form-group files">
-                        <label>Upload your image</label>
+                      <div class="form-group files" id="fileUploadDiv">
+                        <label id="postLabel">Upload your image</label>
                         <input type="file" class="form-control" multiple=""  id="FileForm">
                       </div>
                   </form>
@@ -97,7 +97,7 @@
                   <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
                 </div>
               </div>
-              <button style="width: 100%;" class="btn btn-primary">Post</button>
+              <button style="width: 100%; border-top-left-radius: 0; border-top-right-radius: 0;" class="btn btn-primary">Post</button>
             </div>
           </form>
           

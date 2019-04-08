@@ -1,9 +1,14 @@
+/* Navbar */
+
 body{
     background-color: #d8d8d8;
 }
 .create-btn{
     margin-left: 10px;
 }
+
+/* Post */
+
 .post{
     border: 1px solid black;
     border-radius: 5px;
@@ -68,6 +73,9 @@ body{
     color:#424242;
     text-decoration: underline #424242;
 }
+
+/* Post creation */
+
 #TitleInput{
     padding: 20px 30px 0px 30px;
 }
@@ -78,9 +86,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.login-input{
-    max-width: 500px;
 }
 .files input {
     outline: 2px dashed #92b0b3;
@@ -99,7 +104,7 @@ body{
 .files{ position:relative}
 .files:after {  pointer-events: none;
     position: absolute;
-    top: 60px;
+    top: 160px;
     left: 0;
     width: 50px;
     right: 0;
@@ -128,5 +133,20 @@ body{
     text-align: center;
 }
 #FileForm{
-    height: 300px;
+    height: 400px;
+    width: 500px!important;
+    padding-top: 230px;
+}
+#fileUploadDiv{
+    margin: 0;
+}
+#postLabel{
+    position: absolute;
+    margin: 30px 0 0 30px;
+}
+
+/* Login  */
+
+.login-input{
+    max-width: 500px;
 }
