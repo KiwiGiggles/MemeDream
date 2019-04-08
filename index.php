@@ -39,10 +39,10 @@
       ?>
 
         <div class="container-fluid">
-          <h2 class="mt-4 mb-4">Popular posts today</h2>
+          <h2 class="mt-4 mb-4 postsHeader">Popular posts today</h2>
           
           <!-- Posts -->
-          <div class="post">
+          <div class="post postArea">
             <div class="op">
               <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
               <p class="op-desc">This post was made by <a class="op-name" href="#">Osman</a> 5 minutes ago.</p>
@@ -61,7 +61,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
       <!-- /#page-content-wrapper -->
