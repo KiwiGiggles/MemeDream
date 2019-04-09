@@ -47,10 +47,11 @@ body{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-.postArea{
-    margin: auto;
-    position: relative;
-    right: 10%;
+.containerFlex{
+    display: flex;
+}
+.centerContent{
+    justify-content: space-between;
 }
 .postsHeader{
     text-align: center;

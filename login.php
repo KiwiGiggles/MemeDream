@@ -52,8 +52,9 @@
 
         <div class="container-fluid">
             <h2 class="mt-4 mb-4">Login</h2>  
-          
-            <form>
+
+            <div class="centerContent">
+              <form>
                 <div class="form-group">
                     <label for="loginUsername">Username</label>
                     <input type="username" class="form-control login-input" name="username" id="loginUsername" placeholder="Username">
@@ -67,7 +68,9 @@
                   <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.1.php">Don't have an account?</a></p>
                   <p style="color: white; margin: 5px; float: right;"><a href="http://tor.skelamp.se/aleohm-7/w/MemeDream/forgot password.php">Forgot password?</a></p>
                 </div>
-            </form>
+              </form>
+            </div>
+
         </div>
       </div>
       <!-- /#page-content-wrapper -->
