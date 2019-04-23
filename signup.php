@@ -15,8 +15,7 @@ if(isset($_POST['signup'])){
   $password = trim($_POST["password"]);
   $email = trim($_POST["email"]);
   $check_query = " SELECT * FROM tbl_twitter_user
-  WHERE username = :username
-  ";
+  WHERE username = :username";
   $statement = $connect->prepare($check_query);
   $check_data = array(
     ':username'   => $username
@@ -44,12 +43,13 @@ if(isset($_POST['signup'])){
       if($message == ''){
         $data = array(
           ':username'   => $username,
+          ':email'   => $email,
           ':password'   => password_hash($password, PASSWORD_DEFAULT)
         );
 
-        $query = " INSERT INFO tbl_twitter_user
-        (username, password)
-        VALUES (:username, :password)
+        $query = "INSERT INTO tbl_twitter_user
+        (username, password, email)
+        VALUES (:username, :password, :email)
         ";
 
         $statement = $connect->prepare($query);
@@ -123,7 +123,7 @@ if(isset($_POST['signup'])){
             </form>
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/login.php">Login <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.php">Sign up <span class="sr-only">(current)</span></a>
@@ -142,8 +142,8 @@ if(isset($_POST['signup'])){
                     <input type="text" name="username" class="form-control login-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
                 </div>
                 <div class="form-group">
-                    <label for="InputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control login-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="InputEmail2">Email</label>
+                    <input type="email" name="email" class="form-control login-input" id="InputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword1">Password</label>

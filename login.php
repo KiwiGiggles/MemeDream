@@ -1,5 +1,53 @@
 <?php
-  session_start();
+
+include('database_connection.php');
+
+session_start();
+
+$message = '';
+
+if(isset($_SESSION['user_id'])){
+ header('location:index.php');
+}
+
+if(isset($_POST["login"])){
+ $query = "
+ SELECT * FROM tbl_twitter_user 
+ WHERE username = :username";
+ $statement = $connect->prepare($query);
+ $statement->execute(
+  array(
+      ':username' => $_POST["username"]
+     )
+ );
+ $count = $statement->rowCount();
+ if($count > 0)
+ {
+  $result = $statement->fetchAll();
+  foreach($result as $row)
+  {
+   if(password_verify($_POST['password'], $row['password'])){
+    $_SESSION['user_id'] = $row['user_id'];
+    $_SESSION['username'] = $row['username'];
+    header('location:index.php');
+   }
+   else
+   {
+    $message = '<label>Wrong Password</label>';
+   }
+  }
+ }
+ else
+ {
+  $message = '<label>Wrong Username</labe>';
+ }
+}
+
+
+
+
+
+  /*session_start();
   include "config.php";
 
   if (isset($_POST['login'])) {
@@ -20,7 +68,7 @@
         echo "Fel användarnamn, lösenord eller kombination";
     }
 
-}
+}*/
 ?>
 
 <!doctype html>
@@ -94,18 +142,19 @@
         <div class="container-fluid">
             <h2 class="mt-4 mb-4">Login</h2>  
           
-            <form>
+            <form method="post">
+              <p class="text-danger"><?php echo $message; ?></p>
                 <div class="form-group">
                     <label for="loginUsername">Username</label>
-                    <input type="username" class="form-control login-input" name="username" id="loginUsername" placeholder="Username">
+                    <input type="text" class="form-control login-input" name="username" id="loginUsername" placeholder="Username" required/>
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="loginEmail">Email address</label>
-                    <input type="email" class="form-control login-input" name="email" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
+                    <input type="email" class="form-control login-input" name="email" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" required/>
+                </div>-->
                 <div class="form-group">
                     <label for="loginPassword">Password</label>
-                    <input type="password" class="form-control login-input" name="password" id="loginPassword" placeholder="Password">
+                    <input type="password" class="form-control login-input" name="password" id="loginPassword" placeholder="Password"req>
                 </div>
                 <div style="display: inline-block; width: 500px;">
                   <button type="submit" class="btn btn-primary" name="login">Submit</button>
