@@ -26,10 +26,10 @@
         </form>
         <ul class="navbar-nav">
         <li class="nav-item active">
-            <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/login.php">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="http://tor.skelamp.se/aleohm-7/w/MemeDream/signup.1.php">Sign up <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="signup.1.php">Sign up <span class="sr-only">(current)</span></a>
         </li>
         </ul>
     </div>
