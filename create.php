@@ -1,3 +1,42 @@
+<?php
+include "config.php";
+
+$conn = new mysqli("localhost","aleohm-7",$password, "aleohm-7_user");
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+if(isset($_POST['post'])){
+ 
+  $title = htmlspecialchars($_POST['name']);
+  $name = $_FILES['img']['name'];
+  $target_dir = "upload/";
+  $target_file = $target_dir . basename($_FILES["img"]["name"]);
+
+  // Select file type
+  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+  // Valid file extensions
+  $extensions_arr = array("jpg","jpeg","png","gif");
+
+  // Check extension
+  if( in_array($imageFileType,$extensions_arr) ){
+ 
+    // Convert to base64 
+    $image_base64 = base64_encode(file_get_contents($_FILES['img']['tmp_name']) );
+    $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+    // Insert record
+    $query = "insert into post(title, image) values('$title', '$image')";
+    mysqli_query($conn,$query);
+  
+    // Upload file
+    //move_uploaded_file($_FILES['img']['tmp_name'],$target_dir.$name);
+  }
+ 
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,22 +69,20 @@
             <h2 class="mt-4 mb-4">Create your post!</h2>  
 
           <!-- Post creator -->
-          <form enctype="multipart/form-data" method="post">
+          <form enctype="multipart/form-data" action="create.php" method="post">
             <div class="post">
             <div class="input-group" id="TitleInput">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon3">Title: </span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" class="form-control" id="basic-url" name="name" aria-describedby="basic-addon3">
             </div>
               <div class="post-img-container">
                 <div id="ImgArea">
-                  <form method="post" action="#">
-                      <div class="form-group files" id="fileUploadDiv">
-                        <label id="postLabel">Upload your image</label>
-                        <input type="file" class="form-control" multiple=""  id="FileForm">
-                      </div>
-                  </form>
+                  <div class="form-group files" id="fileUploadDiv">
+                    <label id="postLabel">Upload your image</label>
+                    <input type="file" class="form-control" multiple="" name="img" id="FileForm">
+                  </div>
                 </div>
                 <div class="btn-group post-footer">
                   <button type="button" class="btn btn-secondary post-footer-btn" disabled>Comments <span class="fas fa-comment-alt"></span></button>
@@ -57,7 +94,7 @@
                   <button type="button" class="btn btn-secondary post-footer-btn" disabled><span class="fas fa-arrow-down" data-fa-transform="grow-6"></span></button>
                 </div>
               </div>
-              <button style="width: 100%; border-top-left-radius: 0; border-top-right-radius: 0;" class="btn btn-primary">Post</button>
+              <button type="submit" style="width: 100%; border-top-left-radius: 0; border-top-right-radius: 0;" class="btn btn-primary" name="post">Post</button>
             </div>
           </form>
           
