@@ -13,7 +13,7 @@ if(isset($_SESSION['user_id'])){
 if(isset($_POST['signup'])){
   $username = trim($_POST["username"]);
   $password = trim($_POST["password"]);
-  $check_query = " SELECT * FROM tbl_twitter_user
+  $check_query = " SELECT * FROM user
   WHERE username = :username
   ";
   $statement = $connect->prepare($check_query);
@@ -43,7 +43,7 @@ if(isset($_POST['signup'])){
           ':password'   => password_hash($password, PASSWORD_DEFAULT)
         );
 
-        $query = " INSERT INFO tbl_twitter_user
+        $query = " INSERT INTO user
         (username, password)
         VALUES (:username, :password)
         ";

@@ -65,7 +65,7 @@
                 </div>
                 <div style="display: inline-block; width: 500px;">
                   <button type="submit" class="btn btn-primary" name="login">Submit</button>
-                  <p style="color: white; margin: 5px; float: right;"><a href="signup.1.php">Don't have an account?</a></p>
+                  <p style="color: white; margin: 5px; float: right;"><a href="signup.php">Don't have an account?</a></p>
                   <p style="color: white; margin: 5px; float: right;"><a href="forgot password.php">Forgot password?</a></p>
                 </div>
               </form>
