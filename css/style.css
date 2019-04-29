@@ -34,9 +34,9 @@ body{
     max-width: 560px;
     min-width: 200px;
     background-color: #efefef;
+    margin-bottom: 20px;
 }
 .post-img{
-    height: 100%;
     width: 100%;
 }
 .post-img-container{
@@ -70,7 +70,7 @@ body{
     display: flex;
 }
 .centerContent{
-    justify-content: space-between;
+    justify-content: center;
 }
 .postsHeader{
     text-align: center;

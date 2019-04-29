@@ -34,6 +34,8 @@ if(isset($_POST['post'])){
     //move_uploaded_file($_FILES['img']['tmp_name'],$target_dir.$name);
   }
  
+  header('Location: index.php');
+  exit;
 }
 ?>
 

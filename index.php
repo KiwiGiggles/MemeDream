@@ -1,15 +1,3 @@
-<?php
-
-  session_start();
-  
-  
-
-  if(isset($_SESSION)){
-
-  }
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,36 +26,51 @@
             include 'Partials/navbar.php';
         ?>
 
-        <div class="container-fluid containerFlex" >
-          <div class="centerContent">
+        <div class="container-fluid" >
 
-          </div>
-
-          <div class="centerContent">
+          <div class="containerFlex">
             <h2 class="mt-4 mb-4 postsHeader">Popular posts today</h2>
             
             <!-- Posts -->
-            <div class="post">
-              <div class="op">
-                <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
-                <p class="op-desc">This post was made by <a class="op-name" href="#">Osman</a></p>
-              </div>
-              <h2 class="post-title">Knugen! King of Sweden!</h2>
-              <div class="post-img-container">
-                <img class="post-img" src="pictures/knugen6.png">
-                <div class="btn-group post-footer">
-                  <button type="button" class="btn btn-secondary post-footer-btn">Comments <span class="fas fa-comment-alt"></span></button>
-                  <button type="button" class="btn btn-secondary post-footer-btn">Share <span class="fas fa-share"></span></button>
-                  <button type="button" class="btn btn-secondary post-footer-btn">Save <span class="far fa-bookmark"></span></button>
-                  <button type="button" class="btn btn-secondary post-footer-btn">Report <span class="fas fa-flag"></span></button>
-                  <button type="button" class="btn btn-secondary post-footer-btn vote-btn" id="upVoteBtn"><i class="fas fa-arrow-up" data-fa-transform="grow-6"></i></button>
-                  <input type="button" class="btn btn-secondary post-footer-btn" id="rating" value="0">
-                  <button type="button" class="btn btn-secondary post-footer-btn vote-btn" id="downVoteBtn"><i class="fas fa-arrow-down" data-fa-transform="grow-6"></i></button>
-                </div>
-              </div>
-            </div>
             <div class="centerContent">
-            
+              <?php
+                  $query = mysqli_query($conn, "SELECT * FROM post") or die("Could not load image!");
+                  $count = mysqli_num_rows($query);
+
+                for ($i = 1; $i <= $count; $i++) {
+                  $query = mysqli_query($conn, "SELECT image FROM post WHERE id=$count-$i+1") or die("Could not load image!");
+                  $row = mysqli_fetch_array($query);
+                  $image_src = $row['image'];
+
+                  $query = mysqli_query($conn, "SELECT title FROM post WHERE id=$count-$i+1") or die("Could not load title!");
+                  $row = mysqli_fetch_array($query);
+                  $title = $row['title'];
+
+                  echo ('
+                    <div class="post">
+                    <div class="op">
+                      <img class="op-prof-pic" src="pictures/1200px-765Oranguru.png">
+                      <p class="op-desc">This post was made by <a class="op-name" href="#">You!</a></p>
+                    </div>
+                    <h2 class="post-title">'.$title.'</h2>
+                    <div class="post-img-container">
+                    <img class="post-img" src="'.$image_src.'">
+                      <div class="btn-group post-footer">
+                        <button type="button" class="btn btn-secondary post-footer-btn">Comments <span class="fas fa-comment-alt"></span></button>
+                        <button type="button" class="btn btn-secondary post-footer-btn">Share <span class="fas fa-share"></span></button>
+                        <button type="button" class="btn btn-secondary post-footer-btn">Save <span class="far fa-bookmark"></span></button>
+                        <button type="button" class="btn btn-secondary post-footer-btn">Report <span class="fas fa-flag"></span></button>
+                        <button type="button" class="btn btn-secondary post-footer-btn vote-btn" id="upVoteBtn"><i class="fas fa-arrow-up" data-fa-transform="grow-6"></i></button>
+                        <input type="button" class="btn btn-secondary post-footer-btn" id="rating" value="0">
+                        <button type="button" class="btn btn-secondary post-footer-btn vote-btn" id="downVoteBtn"><i class="fas fa-arrow-down" data-fa-transform="grow-6"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="centerContent">
+                  ');
+                }
+              ?>
+            </div>
             </div>
           </div>
           

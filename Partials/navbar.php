@@ -12,17 +12,16 @@ if(isset($_POST['search'])){
     $searchq = $_POST['search'];
     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 
-    $query = mysqli_query($conn, "SELECT * FROM user WHERE Username LIKE '%$searchq%'") or die("Could not search!");
+    $query = mysqli_query($conn, "SELECT * FROM post WHERE title LIKE '%$searchq%'") or die("Could not search!");
     $count = mysqli_num_rows($query);
     if($count == 0){
         $output = "There was no search results";
     }
     else{
         while($row = mysqli_fetch_array($query)){
-            $username = $row['Username'];
-            $id = $row['#'];
+            $searchtitle = $row['title'];
 
-            $output .= '<div>'.$id.' '.$username.'</div>';
+            $output .= '<div>'.$searchtitle.'</div>';
         }
     }
 }
