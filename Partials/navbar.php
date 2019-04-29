@@ -50,9 +50,9 @@ if(isset($_POST['search'])){
         </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" action="search result.php" method="post">
-        <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-        <button class="btn btn-primary my-2 my-sm-0 create-btn" id="CreateBtn" type="button">Create</button>
+            <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-primary my-2 my-sm-0 create-btn" id="CreateBtn" type="button">Create</button>
         </form>
         <ul class="navbar-nav">
         <li class="nav-item active">
