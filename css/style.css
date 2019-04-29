@@ -66,18 +66,6 @@ body{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-.containerFlex{
-    display: flex;
-}
-.centerContent{
-    justify-content: center;
-}
-.postsHeader{
-    text-align: center;
-    position: relative;
-    right: 10%;
-    margin-right: 16%;
-}
 .fas{
     color: #424242;
 }

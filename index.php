@@ -28,11 +28,11 @@
 
         <div class="container-fluid" >
 
-          <div class="containerFlex">
-            <h2 class="mt-4 mb-4 postsHeader">Popular posts today</h2>
+          <div class="">
+            <h2 class="mt-4 mb-4">Popular posts today</h2>
             
             <!-- Posts -->
-            <div class="centerContent">
+            <div>
               <?php
                   $query = mysqli_query($conn, "SELECT * FROM post") or die("Could not load image!");
                   $count = mysqli_num_rows($query);
