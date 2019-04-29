@@ -31,14 +31,16 @@
                 <h2 class="mt-4 mb-4">Search results</h2>    
 
                 <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
-                </div>
+                  <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                      <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+                  </div>
                 </div>
 
                 <div>
-
+                  <?php
+                    print("$output");
+                  ?>
                 </div>
             </div>
         </div>
