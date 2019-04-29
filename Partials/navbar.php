@@ -42,10 +42,10 @@ if(isset($_POST['search'])){
             <a class="nav-link" href="index.php">Popular <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Hot</a>
+            <a class="nav-link" href="index.php">Hot</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">New</a>
+            <a class="nav-link" href="index.php">New</a>
         </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" action="search result.php" method="post">
